@@ -1,7 +1,7 @@
 # createWordDoc
 
-CURD content and save it in a database and write it in a word file.
+CURD operations and create wordfile.
 
-#dependencies
+<h2>dependencies</h2><br>
 python-docx
 ckeditor
