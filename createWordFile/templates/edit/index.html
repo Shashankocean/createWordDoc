@@ -1,0 +1,9 @@
+<h1>Edit File</h1>
+
+Filename : {{document.name}}
+<form method="POST">
+    {% csrf_token%}
+    {{form.media}}
+    {{form.as_p}}
+    <button type="submit">Update File</button>
+</form>

@@ -1,0 +1,9 @@
+<p>File name: {{ document.name }}</p>
+<style type="text/css">
+    .content{
+        border: 1px solid;
+        border-radius: 5px;
+        padding:10px;
+    }
+</style>
+<div class="content">{{ document.content | safe }}</div>

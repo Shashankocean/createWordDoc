@@ -1,0 +1,25 @@
+<ul>
+{% for document in object_list %}
+    <li><a href="{% url 'viewFile' document.pk%}">{{document.name}}</a>
+        | <a href="{% url 'editFile' document.pk%}">Edit</a>
+    | <a href="{% url 'deleteFile' document.pk%}">Delete</a>
+    | <a href="{% url 'download' document.pk%}">Download</a>
+    </li>
+{% endfor %}
+</ul>
+<style>
+    .button{
+        display: block;
+        width: 115px;
+        height: 25px;
+        background: #4E9CAF;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        line-height: 25px;
+        text-decoration: none;
+    }
+</style>
+<a href="/create" class="button">Create Doc</a>
