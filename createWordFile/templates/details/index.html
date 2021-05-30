@@ -1,9 +1,8 @@
-<p>File name: {{ document.name }}</p>
-<style type="text/css">
-    .content{
-        border: 1px solid;
-        border-radius: 5px;
-        padding:10px;
-    }
-</style>
-<div class="content">{{ document.content | safe }}</div>
+{% extends '../base.html' %}
+
+{%block content%}
+
+<p class="text-lg"><span class="font-semibold">File name:</span> <span class="text-blue-700">{{ document.name }}.docx</span></p>
+<div class="p-5 border border-gray-100 bg-gray-50 my-3">{{ document.content | safe }}</div>
+<p><a href="{% url 'editFile' document.pk%}" class="text-gray-50 text-sm shadow bg-yellow-500 hover:bg-yellow-400 px-2 py-1 rounded-sm mr-2">Edit</a></p>
+{%endblock%}

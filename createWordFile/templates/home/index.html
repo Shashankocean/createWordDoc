@@ -1,25 +1,17 @@
-<ul>
-{% for document in object_list %}
-    <li><a href="{% url 'viewFile' document.pk%}">{{document.name}}</a>
-        | <a href="{% url 'editFile' document.pk%}">Edit</a>
-    | <a href="{% url 'deleteFile' document.pk%}">Delete</a>
-    | <a href="{% url 'download' document.pk%}">Download</a>
-    </li>
-{% endfor %}
-</ul>
-<style>
-    .button{
-        display: block;
-        width: 115px;
-        height: 25px;
-        background: #4E9CAF;
-        padding: 10px;
-        text-align: center;
-        border-radius: 5px;
-        color: white;
-        font-weight: bold;
-        line-height: 25px;
-        text-decoration: none;
-    }
-</style>
-<a href="/create" class="button">Create Doc</a>
+{% extends '../base.html' %}
+
+{%block content%}
+<div>
+    <h3 class="text-lg font-semibold p-1 mb-1">File List</h3>
+    <ul class="p-1">
+    {% for document in object_list %}
+        <li class="mb-2 border bg-gray-50 border-gray-100 py-2 px-3 rounded-md">
+            <a href="{% url 'viewFile' document.pk%}" class="text-lg text-blue-700 underline mr-2">{{document.name}}</a>
+            <a href="{% url 'editFile' document.pk%}" class="text-gray-50 text-sm shadow bg-yellow-500 hover:bg-yellow-400 px-2 py-1 rounded-sm mr-2">Edit</a>
+            <a href="{% url 'deleteFile' document.pk%}" class="text-gray-50 text-sm shadow bg-red-500 hover:bg-red-400 px-2 py-1 rounded-sm mr-2">Delete</a>
+            <a href="{% url 'download' document.pk%}" class="text-sm shadow border border-blue-700 hover:border-blue-400 px-2 py-1 rounded-sm mr-2">Download(no style)</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{%endblock%}

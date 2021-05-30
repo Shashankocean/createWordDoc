@@ -51,7 +51,7 @@ def downloadFile(filename, content):
         preHTML = '<html><head><title>Test</title></head><body>'
         postHTML = '</body></html>'
         print(parser.feed(preHTML+content+postHTML))
-        doc.add_paragraph(parser.feed(preHTML+content+postHTML))
+        doc.add_paragraph(content)
         doc.save('{0}.docx'.format(filename))
 
         file_location = './{0}.docx'.format(filename)

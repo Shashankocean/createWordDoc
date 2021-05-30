@@ -1,9 +1,16 @@
-<h1>Edit File</h1>
+{% extends '../base.html' %}
 
-Filename : {{document.name}}
+{%block content%}
+
+
+<p class="text-lg"><span class="font-semibold">File name:</span> <span class="text-blue-700">{{ document.name }}.docx</span>
+</p>
+
 <form method="POST">
     {% csrf_token%}
     {{form.media}}
     {{form.as_p}}
-    <button type="submit">Update File</button>
+    <button type="submit" class="text-sm shadow bg-yellow-500 hover:bg-yellow-400 px-2 py-1 rounded-sm mr-2">Update File</button>
 </form>
+
+{%endblock%}
